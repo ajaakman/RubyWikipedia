@@ -1,0 +1,26 @@
+
+	<b>Menu</b><br>
+	
+	<a href="/">Home</a><br>
+	
+	<a href="/create">Create</a><br>
+	
+	<a href="/about">About</a><br>
+	
+	<a href="/edit">Edit</a><br>
+	
+	<br><br>
+	
+	<h2>Edit article</h2><br>
+	
+	<form action="/edit" method="post" id="edit">
+	
+		<input type="hidden" name="_method" value="put">
+		
+		<textarea rows="20" cold="90" name="message"><%=@info %></textarea>
+		
+		<input type="submit" value="Update">
+		
+		</form>
+		
+		<p><a href="../reset">Reset</a></p>
