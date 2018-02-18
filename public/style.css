@@ -4,6 +4,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
+    background-image: url("/testimage.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
 }
 
 header {    
@@ -72,4 +76,17 @@ div.table_cell {
     position: relative;
     float: left;
     width: 20%;
+}
+
+div.my_image {
+    width: 40%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+img.my_image {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    min-height: 100%;
 } 
