@@ -1,6 +1,6 @@
 
 body {
-    font-family: Arial;
+    font-family: Times;
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
@@ -9,6 +9,10 @@ body {
 header {    
     height: 100px;
     padding-bottom: 50px;
+    width: 100%;
+    position: relative;
+    float: left;
+    color: yellow;
 } 
 
 a {
@@ -17,6 +21,9 @@ a {
 
 div.main_container {
     background-color: grey;
+    width: 100%;
+    position: relative;
+    float: left;
 }
 
 div.page_title {
@@ -31,4 +38,38 @@ div.navbar {
 
 div.view_content {
     min-height: 800px;
+}
+
+div.links { 
+    width: 90%;
+    position: relative;
+    float: left;
+}
+
+div.login { 
+    width: 10%;
+    position: relative;
+    float: left;
+}
+
+div.users {
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
+    position: relative;
+    float: left;
+}
+
+div.user, div.table_header {
+    width: 100%;
+    position: relative;
+    float: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div.table_cell {
+    position: relative;
+    float: left;
+    width: 20%;
 } 
