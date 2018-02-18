@@ -1,3 +1,4 @@
+# Username and Password validation funcrion. 
 
 function validateForm() {
 

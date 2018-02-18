@@ -1,6 +1,8 @@
-# To run code in browser write "localhost:4567/".
+# Run program by typing command "ruby wiki.rb" in console.
+# To seeprogram in browser use "localhost:4567/" as address.
+# Ctrl+c to terminate the process in Wiondows cmd.
 
-require 'sinatra' # ctrl+c to terminate the server.
+require 'sinatra'
 require 'sinatra/activerecord'
 
 ActiveRecord::Base.establish_connection(
@@ -8,6 +10,7 @@ ActiveRecord::Base.establish_connection(
   :adapter => 'sqlite3',
 
   :database => 'wiki.db'
+
 ) 
 
 
@@ -65,6 +68,58 @@ get '/' do # Root directory of web server.
 	
 	erb :home # Calls home view.
 	
+end
+
+
+get '/about' do
+	
+	erb :about
+	
+end
+
+
+get '/create' do
+	
+	erb :create
+	
+end
+
+
+get '/edit' do # Edit page. Receives input and saves it into wiki.txt file.
+	
+	info = ""	
+	
+	file = File.open("wiki.txt")
+	
+	file.each do |line|	
+	
+			info = info + line			
+	
+	end
+	
+	file.close	
+	
+	@info = info	
+	
+	erb :edit
+
+end
+
+
+put '/edit' do
+
+	info = "#{params[:message]}"
+	
+	@info = info
+	
+	file = File.open("wiki.txt", "w")
+	
+	file.puts @info
+	
+	file.close
+	
+	redirect '/'
+
 end
 
 
@@ -150,54 +205,13 @@ get '/wrongaccount' do
 end
 
 
-get '/about' do # About page.
-	
-	erb :about
-	
-end
+get '/admincontrols' do
 
+   protected!
 
-get '/create' do # Creat page.
-	
-	erb :create
-	
-end
+   @list2 = User.all.sort_by { |u| [u.id] }
 
-
-get '/edit' do # Edit page. Receives input and saves it into wiki.txt file.
-	
-	info = ""	
-	
-	file = File.open("wiki.txt")
-	
-	file.each do |line|	
-	
-			info = info + line			
-	
-	end
-	
-	file.close	
-	
-	@info = info	
-	
-	erb :edit
-
-end
-
-
-put '/edit' do # Functionality for the edit function.
-
-	info = "#{params[:message]}"
-	
-	@info = info
-	
-	file = File.open("wiki.txt", "w")
-	
-	file.puts @info
-	
-	file.close
-	
-	redirect '/'
+   erb :admincontrols
 
 end
 
@@ -234,17 +248,6 @@ n = User.where(:username => params[:uzer]).to_a.first
       erb :admincontrols
 
   end
-
-end
-
-
-get '/admincontrols' do
-
-   protected!
-
-   @list2 = User.all.sort_by { |u| [u.id] }
-
-   erb :admincontrols
 
 end
 
@@ -316,7 +319,7 @@ get '/notfound' do
 end
 
 
-not_found do # Redirect to root directory if directory does not exist.
+not_found do # Redirect if directory does not exist.
 
 	status 404
 	

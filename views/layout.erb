@@ -23,77 +23,77 @@
 
 	<div  class="main_container">
 
-<header>
-
-	<div class="page_title">
-
-		<h1>My Wiki App</h1><br>
-	
-	</div>
-	
-	<div class="navbar">
-
-        <div class= "links">
-    
-            <a href="/">Home</a>
-            
-            <a href="/create">Create</a>
-            
-            <a href="/about">About</a>
-            
-            <a href="/edit">Edit</a>
+        <header>
         
-        </div>
-    	
-		<div class = "login">
-	
-            <% if $credentials %>
-
-                   <% if $credentials[0] != '' %>
-
-                        Logged in as <a href="/user/<%= $credentials[0] %>"><b><%= $credentials[0] %></b></a> | 
-
-                        <a href="/logout">Logout</a> | 
-
-                        <% if $credentials[0] == "Admin" %>
-
-                            <a href="/admincontrols">Admin Controls</a>
-
-                        <% end %>
-
-                    <% else %>
-
-                        <a href="/login">Login</a>
-
-                    <% end %> 
-
-                <% else %>
-
-                   <a href="/login">Login</a>
-
-                <% end %> 
-        </div>
-    
-	</div> 
-	
-</header>
-
-	
-<div class="view_content"> 
-
-	<%= yield %>     
-
-</div> 
-
-
-<footer>
-	
-	<p>Created by Artur Jaakman</p>
-	
-</footer>
-
-
-	</div>
+            <div class="page_title">
+        
+                <h1>My Wiki App</h1><br>
+            
+            </div>
+            
+            <div class="navbar">
+        
+                <div class= "links">
+            
+                    <a href="/">Home</a>
+                    
+                    <a href="/create">Create</a>
+                    
+                    <a href="/about">About</a>
+                    
+                    <a href="/edit">Edit</a>
+                
+                </div>
+                
+                <div class = "login">
+            
+                    <% if $credentials %>
+        
+                           <% if $credentials[0] != '' %>
+        
+                                Logged in as <a href="/user/<%= $credentials[0] %>"><b><%= $credentials[0] %></b></a> | 
+        
+                                <a href="/logout">Logout</a> | 
+        
+                                <% if $credentials[0] == "Admin" %>
+        
+                                    <a href="/admincontrols">Admin Controls</a>
+        
+                                <% end %>
+        
+                            <% else %>
+        
+                                <a href="/login">Login</a>
+        
+                            <% end %> 
+        
+                        <% else %>
+        
+                           <a href="/login">Login</a>
+        
+                        <% end %> 
+                </div>
+            
+            </div> 
+            
+        </header>
+        
+                    
+            <div class="view_content"> 
+            
+                <%= yield %>     
+            
+            </div> 
+        
+        
+            <footer>
+                
+                <p>Created by Artur Jaakman</p>
+                
+            </footer>
+        
+        
+    </div>
 
 </body>
 </html>
