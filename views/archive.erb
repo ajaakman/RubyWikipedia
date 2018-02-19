@@ -1,0 +1,12 @@
+
+<p>These are the Archives</p>
+
+		<% Article.all.each do |article| %>
+		
+		<p><%= article.heading %></p>
+		
+		<p><%= article.content %></p>
+		
+		<br>
+		
+		<% end %>

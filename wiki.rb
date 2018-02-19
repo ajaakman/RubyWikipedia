@@ -133,7 +133,7 @@ end
 #
 #end
 
-post '/edit' do
+post '/create' do
  
    Article.create(heading: params[:heading], content: params[:content])
  
@@ -144,6 +144,27 @@ end
 get '/login' do
 
    erb :login 
+
+end
+
+
+get '/archive' do
+
+   erb :archive
+
+end
+
+
+get '/rankings' do
+
+   erb :rankings
+
+end
+
+
+get '/approve' do
+
+   erb :approve
 
 end
 

@@ -1,0 +1,17 @@
+   
+    <p>This list is the list of articles waiting for approval.</p>
+    
+    <p>As a moderator you have the ability to choose which article gets posted to the home page.</p>
+    
+    <% Article.all.each do |article| %>
+		
+		<p><%= article.heading %></p>
+		
+		<p><%= article.content %></p>
+		
+		<br>
+		
+		
+		
+		<% end %>
+    
