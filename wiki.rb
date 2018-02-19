@@ -31,48 +31,51 @@ class Article < ActiveRecord::Base
 end
 
 
-$myinfo = "Artur Jaakman" # $ indicates global variable.
+#$myinfo = "Artur Jaakman" # $ indicates global variable.
 
-@info = "" # @ indicates instance variable.
 
-def readFile(filename)
 
-	info = ""
-	
-	file = File.open(filename)
-	
-	file.each do |line|
-	
-			info = info + line
-			
-	end
-	
-	file.close
-	
-	$myinfo = info
-	
-end
+#def readFile(filename)
+#
+#	info = ""
+#	
+#	file = File.open(filename)
+#	
+#	file.each do |line|
+#	
+#			info = info + line
+#			
+#	end
+#	
+#	file.close
+#	
+#	$myinfo = info
+#	
+#end
 	
 
 get '/' do # Root directory of web server.
 	
-	info = "Hello There! "
+	#info = "Hello There! "
+	#
+	#len = info.length
+	#
+	#len1 = len
+	#
+	#readFile("wiki.txt")
+	#
+	#@info = info + "" + $myinfo
+	#
+	#len = @info.length
+	#
+	#len2 = len - 1
+	#
+	#len3 = len2 - len1
+	#
+	#@words = len3.to_s
+	#
+	#@info = article.content # @ indicates instance variable.
 	
-	len = info.length
-	
-	len1 = len
-	
-	readFile("wiki.txt")
-	
-	@info = info + "" + $myinfo
-	
-	len = @info.length
-	
-	len2 = len - 1
-	
-	len3 = len2 - len1
-	
-	@words = len3.to_s
 	
 	erb :home # Calls home view.
 	
