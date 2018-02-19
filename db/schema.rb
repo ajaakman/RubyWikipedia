@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180219143213) do
     t.string "author"
     t.boolean "approved"
     t.string "approver"
+    t.string "lasteditor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

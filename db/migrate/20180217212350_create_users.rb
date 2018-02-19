@@ -10,5 +10,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.timestamps null: false 
     end
       User.create(username: "Admin", password: "admin", moderator: true, points: 9999) # Creating an Admin account.
+      User.create(username: "Moderator", password: "moderator", moderator: true, points: 100)
+      User.create(username: "User", password: "user", moderator: false, points: 10)
   end
 end
