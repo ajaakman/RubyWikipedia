@@ -22,6 +22,14 @@ class User < ActiveRecord::Base
 
 end
 
+class Article < ActiveRecord::Base
+
+  validates :heading, presence: true, uniqueness: true
+  
+  validates :content, presence: true
+
+end
+
 
 $myinfo = "Artur Jaakman" # $ indicates global variable.
 
@@ -178,7 +186,7 @@ post '/createaccount' do
  
    if n.username == "Admin" and n.password == "Password"
 	
-		n.edit = true 
+		n.moderator = true 
 
 end
 
@@ -220,7 +228,7 @@ put '/user/:uzer' do
  
   n = User.where(:username => params[:uzer]).to_a.first
 
-   n.edit = params[:edit] ? 1 : 0
+   n.moderator = params[:moderator] ? 1 : 0
   
    n.save 
   
@@ -275,7 +283,7 @@ def authorized?
       
       if @Userz
           
-          if @Userz.edit == true
+          if @Userz.moderator == true
           
               return true
           

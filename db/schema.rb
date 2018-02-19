@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217212350) do
+ActiveRecord::Schema.define(version: 20180219143213) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string "heading"
+    t.string "content"
+    t.string "author"
+    t.boolean "approved"
+    t.string "approver"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
-    t.boolean "edit"
+    t.boolean "moderator"
+    t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

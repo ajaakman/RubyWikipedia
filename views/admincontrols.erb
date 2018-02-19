@@ -11,7 +11,7 @@
     
         <div class="table_cell">Date Joined</div>
     
-        <div class="table_cell">Edit?</div>
+        <div class="table_cell">Moderator</div>
     
         <div class="table_cell">Delete</div>
     
@@ -25,9 +25,9 @@
     
             <div class="table_cell"><%= liste.created_at %></div>
     
-            <!--<div class="table_cell"><%= liste.edit %></div>-->
+            <!--<div class="table_cell"><%= liste.moderator %></div>-->
     
-            <form action="/user/<%= liste.username %>" method="post" id="edit">
+            <form action="/user/<%= liste.username %>" method="post" id="moderator">
     
                 <input type="hidden" name="_method" value="put">
     
@@ -35,9 +35,9 @@
     
             <% if liste.username != "Admin" %>
     
-                <div class="table_cell"><input type="checkbox" name="edit" <%= "checked" if liste.edit %>>   
+                <div class="table_cell"><input type="checkbox" name="moderator" <%= "checked" if liste.moderator %>>   
     
-                <input type="submit" value="Allow Edit?"></div>
+                <input type="submit" value="Moderator"></div>
     
                 <div class="table_cell"><a href="/user/delete/<%= liste.username %>">Delete User?</a></div>
                 
