@@ -98,41 +98,48 @@ end
 
 get '/edit' do # Edit page. Receives input and saves it into wiki.txt file.
 	
-	info = ""	
-	
-	file = File.open("wiki.txt")
-	
-	file.each do |line|	
-	
-			info = info + line			
-	
-	end
-	
-	file.close	
-	
-	@info = info	
-	
+	#info = ""	
+	#
+	#file = File.open("wiki.txt")
+	#
+	#file.each do |line|	
+	#
+	#		info = info + line			
+	#
+	#end
+	#
+	#file.close	
+	#
+	#@info = info	
+	#
 	erb :edit
 
 end
 
 
-put '/edit' do
+#put '/edit' do
+#	
+#	info = "#{params[:message]}"
+#	
+#	@info = info
+#	
+#	file = File.open("wiki.txt", "w")
+#	
+#	file.puts @info
+#	
+#	file.close
+#	
+#	redirect '/'
+#
+#end
 
-	info = "#{params[:message]}"
-	
-	@info = info
-	
-	file = File.open("wiki.txt", "w")
-	
-	file.puts @info
-	
-	file.close
-	
-	redirect '/'
+post '/edit' do
+ 
+   Article.create(heading: params[:heading], content: params[:content])
+ 
+redirect "/"
 
 end
-
 
 get '/login' do
 
@@ -189,9 +196,9 @@ post '/createaccount' do
  
    if n.username == "Admin" and n.password == "Password"
 	
-		n.moderator = true 
+        n.moderator = true 
 
-end
+    end
 
    n.save    
 

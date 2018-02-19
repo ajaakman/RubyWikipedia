@@ -7,25 +7,28 @@
 	
 	<div id="content" style="background-color:#EEEEE;height:340px;width500px;float:left;">
 	
-	 <% Article.all.each do |article| %>
-	 
-	 <p><%= article.heading %></p>
-	 
-	 <p><%= article.content %></p>
-	 
-	 <% end %>
+		<% Article.all.each do |article| %>
+		
+		<p><%= article.heading %></p>
+		
+		<p><%= article.content %></p>
+		
+		<br>
+		
+		<% end %>
 	
-	</div>
-	
-	<div id="content" style="background-color:#EEEEE;height:340px;width500px;float:left;">
-	
-	Number of words: <%= @words %>
+		<p>Number of words: <%= @words %></p>
 	
 		<div class="my_image">
 		
 			<img class="my_image" src="/testimage.png" alt="testimage"/>
 		
 		</div>
+	
+	</div>
+	
+	<div id="content" style="background-color:#EEEEE;height:1000px;width500px;float:left;">
+	
 	
 	</div>
 	

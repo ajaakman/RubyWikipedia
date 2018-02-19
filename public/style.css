@@ -17,7 +17,12 @@ header {
     position: relative;
     float: left;
     color: yellow;
-} 
+}
+
+footer {
+    padding-top: 500px;
+    position: relative;
+}
 
 a {
     text-decoration: none;
