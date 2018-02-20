@@ -3,27 +3,29 @@
     
     <p>As a moderator you have the ability to choose which article gets posted to the home page.</p>
     
+   <% a= Array.new %>
+    
     <% Article.order(created_at: :desc).each do |article| %>
-		<% if article.approved == false %>
-		
-            <p><%= article.heading %><br><br>
-            
-            <%= article.content %><br><br>
-            
-            Author: <%= article.author %><br>
-            Created: <%= article.created_at %><br>
-            <a href ='/editarticle/<%= article.id %>'>Edit this article</a><br>
+            <% if article.approved == false && !a.include?(article.heading)  %>
+        
+        
+                <p><%= article.heading %><br><br>
+                
+                <%= article.content %><br><br>
+                
+                Author: <%= article.author %><br>
+                Created: <%= article.created_at %><br>
+                <a href ='/editarticle/<%= article.id %>'>Edit this article</a><br>
+               
+                Character Count: <%= article.content.size %><br>
+                Word Count: <%= article.content.split.size %><br>
            
-            Character Count: <%= article.content.size %><br>
-            Word Count: <%= article.content.split.size %><br>
+                <% a.push article.heading %>
        
         <% end %>
         </p>			
     
         <br>
-		
-
-        
-		
+	   
 	<% end %>
     
