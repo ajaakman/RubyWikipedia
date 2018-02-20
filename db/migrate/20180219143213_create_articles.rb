@@ -11,8 +11,8 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string :lasteditor
       t.timestamps null: false 
     end
-      Article.create(heading: "testheading", content: "testcontent testcontent testcontent testcontent testcontent testcontent testcontent", author: "Admin", approved: true, approver: "Admin")
-      Article.create(heading: "test2", content: "testcontent2 text texttexttext texttext texttestcontent testcontent testcontent testcontent testcontent", author: "Admin", approved: true, approver: "Admin")
+      Article.create(heading: "testheading", content: "testcontent testcontent testcontent testcontent testcontent testcontent testcontent", author: "Admin", approved: false, approver: "Admin")
+      Article.create(heading: "test2", content: "testcontent2 text texttexttext texttext texttestcontent testcontent testcontent testcontent testcontent", author: "Admin", approved: false, approver: "Admin")
 
     end
 end

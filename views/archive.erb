@@ -1,12 +1,21 @@
 
-<p>These are the Archives</p>
+<Sp>These are the Archives for all of the approved articles</p>
 
-		<% Article.all.each do |article| %>
-		
-		<p><%= article.heading %></p>
-		
-		<p><%= article.content %></p>
-		
-		<br>
-		
-		<% end %>
+	<% Article.order(created_at: :desc).each do |article| %>
+	<% if article.approved == true %>
+	
+	<p><%= article.heading %><br><br>
+	
+	<%= article.content %><br><br>
+	
+	Author: <%= article.author %><br>
+	Created: <%= article.created_at %><br>
+	Approved By: <%= article.approver %><br>
+	Approved On: <%= article.edited_at %><br>
+	<% end %>
+	
+	</p>			
+	
+	<br>
+	
+	<% end %>

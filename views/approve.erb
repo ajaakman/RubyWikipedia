@@ -3,13 +3,20 @@
     
     <p>As a moderator you have the ability to choose which article gets posted to the home page.</p>
     
-    <% Article.all.each do |article| %>
+    <% Article.order(created_at: :desc).each do |article| %>
+		<% if article.approved == false %>
 		
-		<p><%= article.heading %></p>
+        <p><%= article.heading %><br><br>
 		
-		<p><%= article.content %></p>
-		
-		<br>
+        <%= article.content %><br><br>
+        
+        Author: <%= article.author %><br>
+        Created: <%= article.created_at %><br>
+        <a href ='/editarticle/<%= article.id %>'>Edit this article</a>
+        <% end %>
+        </p>			
+    
+        <br>
 		
 		
 		

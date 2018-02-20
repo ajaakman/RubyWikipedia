@@ -7,14 +7,20 @@
 	
 	<div id="content" style="background-color:#EEEEE;height:340px;width500px;float:left;">
 	
-		<% Article.all.each do |article| %>
+		<% 	Article.order(updated_at: :desc).each do |article| %>
+			<% if article.approved == true %>
 		
-		<p><%= article.heading %></p>
+			<p><%= article.heading %><br><br>
 		
-		<p><%= article.content %></p>
+			<%= article.content %><br><br>
+			
+			Author: <%= article.author %><br>
+			Approved On: <%= article.edited_at %><br>
+			<a href ='/editarticle/<%= article.id %>'>Edit this article</a>
+			<% end %>
+			</p>			
 		
-		<br>
-		
+			<br>
 		
 		
 		<% end %>

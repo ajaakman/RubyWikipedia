@@ -4,6 +4,8 @@
 
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'pp'
+set :logging, :true
 
 ActiveRecord::Base.establish_connection(
 
@@ -24,7 +26,7 @@ end
 
 class Article < ActiveRecord::Base
 
-  validates :heading, presence: true, uniqueness: true
+  validates :heading, presence: true
   
   validates :content, presence: true
 
@@ -116,6 +118,10 @@ get '/edit' do # Edit page. Receives input and saves it into wiki.txt file.
 
 end
 
+get '/editarticle/:id' do
+    @article = Article.where(:id => params[:id]).to_a.first
+    erb :editarticle,  :locals => { :myheading =>  @article.heading, :mycontent=> @article.content} 
+end
 
 #put '/edit' do
 #	
@@ -135,11 +141,22 @@ end
 
 post '/create' do
  
-   Article.create(heading: params[:heading], content: params[:content])
+   Article.create(heading: params[:heading], content: params[:content], approved: false)
  
 redirect "/"
 
 end
+
+
+post '/edit' do
+ 
+  pp params
+   Article.create!(heading: params[:heading], content: params[:content], approved: false)
+ 
+redirect "/"
+
+end
+
 
 get '/login' do
 
