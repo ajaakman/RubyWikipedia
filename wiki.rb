@@ -141,8 +141,13 @@ end
 
 post '/create' do
  
-   Article.create(heading: params[:heading], content: params[:content], approved: false)
- 
+ a = Array.new
+ Article.all.each do |article|
+  a.push article.heading
+end
+    if !a.include?(params[:heading]) #Preventing the creation of articles with duplicate names.
+        Article.create(heading: params[:heading], content: params[:content], approved: false)
+    end
 redirect "/"
 
 end
