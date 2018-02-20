@@ -6,19 +6,24 @@
     <% Article.order(created_at: :desc).each do |article| %>
 		<% if article.approved == false %>
 		
-        <p><%= article.heading %><br><br>
-		
-        <%= article.content %><br><br>
-        
-        Author: <%= article.author %><br>
-        Created: <%= article.created_at %><br>
-        <a href ='/editarticle/<%= article.id %>'>Edit this article</a>
+            <p><%= article.heading %><br><br>
+            
+            <%= article.content %><br><br>
+            
+            Author: <%= article.author %><br>
+            Created: <%= article.created_at %><br>
+            <a href ='/editarticle/<%= article.id %>'>Edit this article</a><br>
+           
+            Character Count: <%= article.content.size %><br>
+            Word Count: <%= article.content.split.size %><br>
+       
         <% end %>
         </p>			
     
         <br>
 		
+
+        
 		
-		
-		<% end %>
+	<% end %>
     
