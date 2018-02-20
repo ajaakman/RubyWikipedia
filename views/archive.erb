@@ -1,17 +1,22 @@
 
 <p>These are the Archives for all of the approved articles</p>
 
-<% Article.order(created_at: :desc).each do |article| %>
-                   
-<p><%= article.heading %><br><br>
-                
-<%= article.content %><br><br>
-
-Author: <%= article.author %><br>
-Created: <%= article.created_at %><br>
-Approved: <%= article.approved %><br>
-
-Character Count: <%= article.content.size %><br>
-Word Count: <%= article.content.split.size %><br>
-	   
-<% end %>
+    <% Article.order(created_at: :desc).each do |article| %>
+        
+        <% if article.approved %>
+        
+        <p><%= article.heading %><br><br>
+        
+        <%= article.content %><br><br>
+        
+        Author: <%= article.author %><br>
+        
+        Created: <%= article.created_at %><br>
+        
+        
+        Character Count: <%= article.content.size %><br>
+        Word Count: <%= article.content.split.size %><br>
+        
+        <% end %>   
+    
+    <% end %>

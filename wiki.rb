@@ -162,6 +162,18 @@ redirect "/"
 
 end
 
+post '/reset' do
+$credentials = ['','']
+Article.delete_all
+User.delete_all
+User.create(username: "Admin", password: "admin", moderator: true, points: 9999) # Creating an Admin account.
+User.create(username: "Moderator", password: "moderator", moderator: true, points: 100)
+User.create(username: "User", password: "user", moderator: false, points: 10)
+Article.create(heading: "testheading", content: "testcontent testcontent testcontent testcontent testcontent testcontent testcontent", author: "Admin", approved: false, approver: "Admin")
+Article.create(heading: "test2", content: "testcontent2 text texttexttext texttext texttestcontent testcontent testcontent testcontent testcontent", author: "Admin", approved: false, approver: "Admin")
+redirect "/"
+ 
+end
 
 get '/login' do
 
@@ -179,6 +191,8 @@ end
 
 get '/rankings' do
 
+   @list4 = User.all.sort_by { |u| [u.points] }
+
    erb :rankings
 
 end
@@ -189,6 +203,7 @@ get '/approve' do
    erb :approve
 
 end
+
 
 #called when Approve link is clicked
 get '/approveConfirmation/:id' do
@@ -278,12 +293,27 @@ get '/admincontrols' do
 
    protected!
 
-   @list2 = User.all.sort_by { |u| [u.id] }
-
    erb :admincontrols
 
 end
 
+get '/articlelist' do
+
+ 
+   @list3 = Article.all.sort_by { |u| [u.id] }
+
+   erb :articlelist
+
+end
+
+get '/userlist' do
+
+
+   @list2 = User.all.sort_by { |u| [u.id] }
+   
+   erb :userlist
+
+end
 
 put '/user/:uzer' do
  
@@ -291,6 +321,16 @@ put '/user/:uzer' do
 
    n.moderator = params[:moderator] ? 1 : 0
   
+   n.save 
+  
+   redirect '/'
+
+end
+
+put '/user/:artikle' do
+ 
+  n = Article.where(:id => params[:artikle]).to_a.first
+
    n.save 
   
    redirect '/'
@@ -312,14 +352,29 @@ n = User.where(:username => params[:uzer]).to_a.first
 
       n.destroy    
       
-      @list2 = User.all.sort_by { |u| [u.id] }
+     @list2 = User.all.sort_by { |u| [u.id] }
       
+    
       erb :admincontrols
 
   end
 
 end
 
+get '/article/delete/:artikle' do  
+ 
+# protected!
+
+      n = Article.where(:id => params[:artikle]).to_a.first
+
+      n.destroy    
+      
+      
+     @list3 = Article.all.sort_by { |a| [a.id] }
+     
+      erb :admincontrols
+
+end
 
 helpers do
 

@@ -1,2 +1,26 @@
 
-    <p>rankings</p>
+    <p>User Rankings</p><br>
+    
+    <div class="users"> 
+    
+    <div class="table_header">
+    
+        <div class="table_cell">Username</div>
+            
+        <div class="table_cell">Points</div>
+            
+    </div>
+    
+    <% @list4.each do |liste| %>   
+    
+        <div class="user">  
+    
+            <div class="table_cell"><%= liste.username %></div>
+    
+            <div class="table_cell"><%= liste.points %></div>
+        
+        </div>   
+ 
+    <% end %>
+
+</div>

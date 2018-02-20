@@ -1,0 +1,48 @@
+
+<p><b>Article List</b></p><br>
+
+<div class="articles"> 
+    
+    <div class="table_header">
+    
+        <div class="table_cell">Article ID</div>
+        
+        <div class="table_cell">Heading</div>
+    
+        <div class="table_cell">Author</div>
+    
+        <div class="table_cell">Date Created</div>
+        
+        <div class="table_cell">Approved</div>
+        
+        <div class="table_cell">Approver</div>
+        
+        <div class="table_cell">Date Approved</div>
+    
+        <div class="table_cell">Delete</div>
+    
+    </div>
+    
+    <% @list3.each do |liste| %>
+    
+    <div class="article">  
+
+        <div class="table_cell"><%= liste.id %></div>
+
+       <div class="table_cell"><%= liste.heading %></div>
+
+       <div class="table_cell"><%= liste.author %></div>
+
+       <div class="table_cell"><%= liste.created_at %></div>
+       
+       <div class="table_cell"><%= liste.approved %></div>
+       
+       <div class="table_cell"><%= liste.approver %></div>
+       
+       <div class="table_cell"><%= liste.updated_at %></div>
+   
+       <div class="table_cell"><a href="/artikle/delete/<%= liste.id %>">Delete Article?</a></div>
+    
+    <% end %>
+
+</div>

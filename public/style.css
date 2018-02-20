@@ -61,15 +61,15 @@ div.login {
     float: left;
 }
 
-div.users {
-    width: 60%;
-    padding-left: 20%;
-    padding-right: 20%;
+div.users, div.articles {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
     position: relative;
     float: left;
 }
 
-div.user, div.table_header {
+div.user, div.article, div.table_header {
     width: 100%;
     position: relative;
     float: left;
@@ -80,7 +80,7 @@ div.user, div.table_header {
 div.table_cell {
     position: relative;
     float: left;
-    width: 20%;
+    width: 12.5%;
 }
 
 div.my_image {
