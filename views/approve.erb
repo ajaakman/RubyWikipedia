@@ -3,10 +3,9 @@
     
     <p>As a moderator you have the ability to choose which article gets posted to the home page.</p>
     
-   <% a= Array.new %>
-    
+      
     <% Article.order(created_at: :desc).each do |article| %>
-            <% if article.approved == false && !a.include?(article.heading)  %>
+            <% if article.approved == false  %>
         
         
                 <p><%= article.heading %><br><br>
@@ -20,8 +19,8 @@
                 Character Count: <%= article.content.size %><br>
                 Word Count: <%= article.content.split.size %><br>
            
-                <% a.push article.heading %>
-       
+                <a href ='/approveConfirmation/<%= article.id %>'>Approve</a>
+                
         <% end %>
         </p>			
     

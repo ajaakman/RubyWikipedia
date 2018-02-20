@@ -190,6 +190,14 @@ get '/approve' do
 
 end
 
+#called when Approve link is clicked
+get '/approveConfirmation/:id' do
+    
+    article = Article.where(:id => params[:id]).to_a.first  #find that article using id
+    article.approved=true
+    article.save
+    erb :approvedConf
+end
 
 post '/login' do
 

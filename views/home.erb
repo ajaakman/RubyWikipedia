@@ -7,21 +7,23 @@
 	
 	<div id="content" style="background-color:#EEEEE;height:340px;width500px;float:left;">
 	
+	<% a= Array.new %>
+	
 		<% 	Article.order(updated_at: :desc).each do |article| %>
-			<% if article.approved == true %>
+			<% if article.approved == true && !a.include?(article.heading)  %>
 		
 			<p><%= article.heading %><br><br>
 		
 			<%= article.content %><br><br>
 			
 			Author: <%= article.author %><br>
-			Approved On: <%= article.edited_at %><br>
+			Approved On: <%= article.updated_at %><br>
 			<a href ='/editarticle/<%= article.id %>'>Edit this article</a>
 			<% end %>
 			</p>			
 		
 			<br>
-		
+		<% a.push article.heading %>
 		
 		<% end %>
 	
