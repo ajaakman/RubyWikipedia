@@ -36,6 +36,76 @@ end
 #$myinfo = "Artur Jaakman" # $ indicates global variable.
 
 
+helpers do
+ 
+    def restricted! # Only admins.
+       if authorized?
+          return
+       end
+    redirect '/denied'
+    end
+
+    def authorized?
+         if $credentials != nil
+          @Userz = User.where(:username => $credentials[0]).to_a.first      
+            if @Userz          
+                if @Userz.moderator == true          
+                    return true          
+                else              
+                    return false         
+                end          
+            else          
+                return false      
+            end       
+          end   
+    end
+    
+    def protected! # Only Moderators.
+       if authorized?
+          return
+       end
+    redirect '/denied'
+    end
+
+    def authorized?
+         if $credentials != nil
+          @Userz = User.where(:username => $credentials[0]).to_a.first      
+            if @Userz          
+                if @Userz.moderator == true          
+                    return true          
+                else              
+                    return false         
+                end          
+            else          
+                return false      
+            end       
+          end   
+    end
+
+   def registered! # Only Logged In users.
+       if authorized?
+          return
+       end
+    redirect '/denied'
+    end
+
+    def authorized?
+         if $credentials != nil
+          @Userz = User.where(:username => $credentials[0]).to_a.first      
+            if @Userz          
+                if @Userz.moderator == true          
+                    return true          
+                else              
+                    return false         
+                end          
+            else          
+                return false      
+            end       
+          end   
+    end
+
+end
+
 
 #def readFile(filename)
 #
@@ -93,12 +163,16 @@ end
 
 get '/create' do
 	
+	registered!
+	
 	erb :create
 	
 end
 
 
 get '/edit' do # Edit page. Receives input and saves it into wiki.txt file.
+	
+	registered!
 	
 	#info = ""	
 	#
@@ -119,6 +193,9 @@ get '/edit' do # Edit page. Receives input and saves it into wiki.txt file.
 end
 
 get '/editarticle/:id' do
+ 
+ registered!
+ 
     @article = Article.where(:id => params[:id]).to_a.first
     erb :editarticle,  :locals => { :myheading =>  @article.heading, :mycontent=> @article.content} 
 end
@@ -141,6 +218,8 @@ end
 
 post '/create' do
  
+ protected!
+ 
  a = Array.new
  Article.all.each do |article|
   a.push article.heading
@@ -154,6 +233,8 @@ end
 
 
 post '/edit' do
+
+protected!
  
   pp params
    Article.create!(heading: params[:heading], content: params[:content], approved: false)
@@ -163,6 +244,9 @@ redirect "/"
 end
 
 post '/reset' do
+ 
+ restricted!
+ 
 $credentials = ['','']
 Article.delete_all
 User.delete_all
@@ -200,6 +284,8 @@ end
 
 get '/approve' do
 
+protected!
+
    erb :approve
 
 end
@@ -207,6 +293,8 @@ end
 
 #called when Approve link is clicked
 get '/approveConfirmation/:id' do
+
+protected!
     
     article = Article.where(:id => params[:id]).to_a.first  #find that article using id
     article.approved=true
@@ -291,7 +379,7 @@ end
 
 get '/admincontrols' do
 
-   protected!
+   restricted!
 
    erb :admincontrols
 
@@ -299,6 +387,7 @@ end
 
 get '/articlelist' do
 
+   restricted!
  
    @list3 = Article.all.sort_by { |u| [u.id] }
 
@@ -308,6 +397,7 @@ end
 
 get '/userlist' do
 
+restricted!
 
    @list2 = User.all.sort_by { |u| [u.id] }
    
@@ -316,6 +406,8 @@ get '/userlist' do
 end
 
 put '/user/:uzer' do
+
+restricted!
  
   n = User.where(:username => params[:uzer]).to_a.first
 
@@ -328,6 +420,8 @@ put '/user/:uzer' do
 end
 
 put '/user/:artikle' do
+
+restricted!
  
   n = Article.where(:id => params[:artikle]).to_a.first
 
@@ -340,7 +434,7 @@ end
 
 get '/user/delete/:uzer' do  
  
-# protected!
+restricted!
 
 n = User.where(:username => params[:uzer]).to_a.first
 
@@ -358,12 +452,14 @@ n = User.where(:username => params[:uzer]).to_a.first
       erb :admincontrols
 
   end
+  
+   redirect '/'
 
 end
 
 get '/article/delete/:artikle' do  
  
-# protected!
+restricted!
 
       n = Article.where(:id => params[:artikle]).to_a.first
 
@@ -374,50 +470,7 @@ get '/article/delete/:artikle' do
      
       erb :admincontrols
 
-end
-
-helpers do
-
-    def protected!
-
-    if authorized?
-
-    return
-
-    end
-
-    redirect '/denied'
-
-end
-
-
-def authorized?
-
-  if $credentials != nil
-
-    @Userz = User.where(:username => $credentials[0]).to_a.first
-      
-      if @Userz
-          
-          if @Userz.moderator == true
-          
-              return true
-          
-          else
-              
-              return false
-         
-          end
-          
-      else
-          
-          return false
-      
-      end
-      
-     end
-   
-  end
+   redirect '/'
 
 end
 
