@@ -39,17 +39,17 @@ end
 helpers do
  
     def restricted! # Only admins.
-       if authorized?
+       if authorizedadmin?
           return
        end
     redirect '/denied'
     end
 
-    def authorized?
+    def authorizedadmin?
          if $credentials != nil
           @Userz = User.where(:username => $credentials[0]).to_a.first      
             if @Userz          
-                if @Userz.moderator == true          
+                if @Userz.username == "Admin"          
                     return true          
                 else              
                     return false         
@@ -61,13 +61,13 @@ helpers do
     end
     
     def protected! # Only Moderators.
-       if authorized?
+       if authorizedmoderator?
           return
        end
-    redirect '/denied'
+    redirect '/onlymods'
     end
 
-    def authorized?
+    def authorizedmoderator?
          if $credentials != nil
           @Userz = User.where(:username => $credentials[0]).to_a.first      
             if @Userz          
@@ -83,17 +83,17 @@ helpers do
     end
 
    def registered! # Only Logged In users.
-       if authorized?
+       if authorizeduser?
           return
        end
-    redirect '/denied'
+    redirect '/pleaselogin'
     end
 
-    def authorized?
+    def authorizeduser?
          if $credentials != nil
           @Userz = User.where(:username => $credentials[0]).to_a.first      
             if @Userz          
-                if @Userz.moderator == true          
+                if @Userz.username != ""          
                     return true          
                 else              
                     return false         
@@ -488,6 +488,17 @@ get '/denied' do
 
 end
 
+get '/pleaselogin' do
+  
+   erb :pleaselogin
+
+end
+
+get '/onlymods' do
+  
+   erb :onlymods
+
+end
 
 get '/notfound' do
 
