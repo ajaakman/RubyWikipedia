@@ -1,9 +1,11 @@
 
-<p><b>User list</b></p><br>
+<h1>User list</h1><br>
 
 <div class="users"> 
     
     <div class="table_header">
+    
+        <div class="table_cell">User ID</div>
     
         <div class="table_cell">Username</div>
     
@@ -23,7 +25,9 @@
     
     <% @list2.each do |liste| %>   
     
-        <div class="user">  
+        <div class="user">
+            
+            <div class="table_cell"><%= liste.id %></div>
     
             <div class="table_cell"><%= liste.username %></div>
     

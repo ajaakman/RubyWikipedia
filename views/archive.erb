@@ -1,22 +1,32 @@
 
-<p>These are the Archives for all of the approved articles</p>
+<h1>These archives contain all approved articles submitted in chronological order.</h1>
 
-    <% Article.order(created_at: :desc).each do |article| %>
-        
-        <% if article.approved %>
-        
-        <p><%= article.heading %><br><br>
-        
-        <%= article.content %><br><br>
-        
-        Author: <%= article.author %><br>
-        
-        Created: <%= article.created_at %><br>
-        
-        
-        Character Count: <%= article.content.size %><br>
-        Word Count: <%= article.content.split.size %><br>
-        
-        <% end %>   
+	<% a = Array.new %>
+	<% total_char = 0 %>
+	<% total_word = 0 %>
+
+        <% 	Article.order(created_at: :desc).each do |article| %>
+			<% if article.approved %>
+			<div class="content">
+				<h2><%= article.heading %></h2><br>
+				<p1><%= article.content %></p><br><br>
+				<p2>
+				Author: <%= article.author %>
+                Created: <%= article.created_at %><br>
+				Approved By: <%= article.approver %>
+				On: <%= article.updated_at %><br>
+				Character Count: <%= article.content.size %>	Word Count: <%= article.content.split.size %><br>
+				<% total_char += article.content.size %>
+				<% total_word += article.content.split.size %>
+				</p2>
+			</div>
+			<% end %>
+			<br>
+		<% a.push article.heading %>		
+		<% end %>
+	
+	<div class="content">	
+		<p2>Combined Character Count: <%= total_char %>		Combined Word Count: <%= total_word %></p2><br>
+	</div>
+
     
-    <% end %>

@@ -1,24 +1,24 @@
+<!--Home page loop for creating articles created by Artur Jaakman, Debugging suppot by Nazmus Sakib.-->
 	
-	<h1>Welcome to WAD wiki. </h1>
+	<h1>Welcome to GameTechWikia </h1>
 	
-	<p>A free online encyclopedia of knowledge that can be viewed by anyone!<br>
-	Feel free to search for anything you desire! And if it does not exist then create it!<br>	
-	Use the menu to the left to navigate the site!</p>
+	<p>A free online encyclopedia of gaming related tech reviews.<br>
+	Read about all the latest game tech information on the home page, or browse the archives for older reviews.<br>	
+	Register to post articles and suggest edits. Once you submit your article it will be sent to the moderators for approval.</p>
 	
+	<% a = Array.new %>
+	<% total_char = 0 %>
+	<% total_word = 0 %>
 	
-		<% a = Array.new %>
-		<% total_char = 0 %>
-		<% total_word = 0 %>
-		
-			<% 	Article.order(updated_at: :desc).each do |article| %>
-				<% if article.approved == true && !a.include?(article.heading)  %>
-				<div class="content">
-				<h2>
-				<%= article.heading %><br>
-				</h2>
-				<p1><%= article.content %><br><br></p>
+		<% 	Article.order(updated_at: :desc).each do |article| %>
+			<% if article.approved == true && !a.include?(article.heading)  %>
+			<div class="content">
+				<h2><%= article.heading %></h2><br>
+				<p1><%= article.content %></p><br><br>
 				<p2>
-				Author: <%= article.author %>	Approved On: <%= article.updated_at %>  Approved By: <%= article.approver %><br>
+				Author: <%= article.author %>
+				Approved By: <%= article.approver %>
+				On: <%= article.updated_at %><br>
 				Character Count: <%= article.content.size %>	Word Count: <%= article.content.split.size %><br>
 				<% total_char += article.content.size %>
 				<% total_word += article.content.split.size %>
@@ -26,31 +26,16 @@
 				<p1>		
 				<% if $credentials != nil %>
 					<% if $credentials[0] != "" %>
-					<a href ='/editarticle/<%= article.id %>'>Edit this article</a><br>
+						<a href ='/editarticle/<%= article.id %>'>Edit this article</a><br>
 					<% end %>
-				<% end %>
 				</p1>
-				</div>
 				<% end %>
-				<br>
-			<% a.push article.heading %>
-			
+			</div>
 			<% end %>
-		<div class="content">	
-		<p2>
-		Combined Character Count: <%= total_char %>		Combined Word Count: <%= total_word %><br>
-		</p2>
-		</div>
-		
-			
-		
-			<!--<div class="my_image">
-			
-				<img class="my_image" src="/testimage.png" alt="testimage"/>
-			
-			</div>-->
+			<br>
+		<% a.push article.heading %>		
+		<% end %>
 	
-	
-	
-
-	
+	<div class="content">	
+		<p2>Combined Character Count: <%= total_char %>		Combined Word Count: <%= total_word %></p2><br>
+	</div>

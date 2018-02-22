@@ -253,7 +253,7 @@ get '/approveConfirmation/:id' do # Called when Approve link is clicked. Made by
   article.approver=$credentials[0]
   
   @Users = User.where(:username => article.author).to_a.first # Give +1 point to article author.
-  @Users.points += 1
+  @Users.points += 10
   @Users.save
   
   article.save

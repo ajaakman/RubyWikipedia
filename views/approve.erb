@@ -1,30 +1,31 @@
    
-    <p>This list is the list of articles waiting for approval.</p>
+    <p>This is the list of articles subbmitted for approval.</p>
     
-    <p>As a moderator you have the ability to choose which article gets posted to the home page.</p>
+    <p>As a moderator you have the ability to choose which articles get posted on the main page.</p>
     
-      
-    <% Article.order(created_at: :desc).each do |article| %>
-            <% if article.approved == false  %>
-        
-        
-                <p><%= article.heading %><br><br>
-                
-                <%= article.content %><br><br>
-                
-                Author: <%= article.author %><br>
+    <% a = Array.new %>
+	<% total_char = 0 %>
+	<% total_word = 0 %>   
+    
+        <% Article.order(created_at: :desc).each do |article| %>
+			<% if article.approved == false %>
+			<div class="content">
+				<h2><%= article.heading %></h2><br>
+				<p1><%= article.content %></p><br><br>
+				<p2>
+				Author: <%= article.author %>
                 Created: <%= article.created_at %><br>
-                <a href ='/editarticle/<%= article.id %>'>Edit this article</a><br>
-               
-                Character Count: <%= article.content.size %><br>
-                Word Count: <%= article.content.split.size %><br>
-           
-                <a href ='/approveConfirmation/<%= article.id %>'>Approve</a>
-                
-        <% end %>
-        </p>			
-    
-        <br>
-	   
-	<% end %>
-    
+				Character Count: <%= article.content.size %>	Word Count: <%= article.content.split.size %><br>
+				<% total_char += article.content.size %>
+				<% total_word += article.content.split.size %>
+				</p2><br>
+                <p1><a href ='/approveConfirmation/<%= article.id %>'>Approve</a><p1>
+			</div>
+			<% end %>
+			<br>
+		<% a.push article.heading %>		
+		<% end %>
+        
+        <div class="content">	
+            <p2>Combined Character Count: <%= total_char %>		Combined Word Count: <%= total_word %></p2><br>
+        </div>
