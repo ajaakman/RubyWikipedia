@@ -64,3 +64,37 @@
 22 02 2018 at 06:13PM	Admin	Article approved with id: 25
 
 22 02 2018 at 06:18PM	User	User Logged in with user id: User
+
+22 02 2018 at 06:53PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 07:05PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 08:34PM		Logging attempt failed: test
+
+22 02 2018 at 08:34PM		New user signed up with user id test
+
+22 02 2018 at 08:34PM		Logging attempt failed: test
+
+22 02 2018 at 08:34PM		New user signed up with user id test
+
+22 02 2018 at 08:34PM		Logging attempt failed: test
+
+22 02 2018 at 08:34PM		New user signed up with user id rtetry
+
+22 02 2018 at 08:36PM	Unknow	New user signed up with user id test
+
+22 02 2018 at 08:36PM	test	User Logged in with user id: test
+
+22 02 2018 at 08:37PM	test	New article created with heading dsfdsf
+
+22 02 2018 at 08:37PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 08:37PM	Admin	Article approved with id: 26
+
+22 02 2018 at 08:50PM	Admin	Article approved with id: 24
+
+22 02 2018 at 08:53PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 08:53PM	Admin	New article created with heading asdsad
+
+22 02 2018 at 08:53PM	Admin	Article approved with id: 27

@@ -1,16 +1,11 @@
-
+/*CSS Primarily designed by Artur Jaakman, with much debugging aid from Nazmus Sakib*/
 body {
     font-family: Garamond;
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
     background-color: #282E3A;
-/*    background-image: url("/testimage.png");
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-attachment: fixed;*/
 }
-
 
 header {    
     height: 100px;
@@ -21,10 +16,37 @@ header {
     color: #262F40;
 }
 
-
 footer {
-    padding-top: 100px;
+    padding-top: 20%;
+}
 
+a:link {
+    color: #282E3A;
+    font-weight: bold;
+}
+
+a:visited {
+    color: #282E3A;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #6182F2;
+    font-weight: bold;
+}
+
+h1 {
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+h2 {
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 p {
@@ -50,24 +72,25 @@ p2 {
     font-size: 80%;
 }
 
-h1 {
-
-    height: 90%;
-    width: 90%;
-    margin: auto;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-
-h2 {
-    margin: auto;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-
 a {
     text-decoration: none;
 }
+
+div.main_container {
+    margin: auto;
+    background-color: #BBB8CC;
+    width: 100%;
+    height: 100%; 
+}
+
+div.view_content {
+    min-height: 100%;
+}
+
+div.page_title {
+    text-align: center;
+    font-size: 120%;
+} 
 
 div.content {
     margin: auto;
@@ -79,25 +102,6 @@ div.content {
     padding-right: 1%;
     padding-bottom: 1%;
     padding-left: 1%;
-}
-
-
-
-div.main_container {
-    margin: auto;
-    background-color: #BBB8CC;
-    width: 100%;
-    height: 100%;
-
-}
-
-div.page_title {
-    text-align: center;
-    font-size: 120%;
-} 
-
-div.view_content {
-    min-height: 100%;
 }
 
 div.navbar {
@@ -112,16 +116,16 @@ div.navbar {
 div.links { 
     width: 14%;
     text-align: center;
+    
     background-color: #DFDAF2;
     float: left;
     font-size: 110%;
 }
 
-
+/*Tables for Admin controls*/
 div.users, div.articles {
     margin: auto;
     width: 90%;
-
 }
 
 div.user, div.article, div.table_header {
@@ -137,16 +141,3 @@ div.table_cell {
     float: left;
     width: 12.5%;
 }
-
-/*div.my_image {
-    width: 40%;
-    padding-left: 30%;
-    padding-right: 30%;
-}
-
-img.my_image {
-    width: auto;
-    height: auto;
-    max-height: 100%;
-    min-height: 100%;
-} */

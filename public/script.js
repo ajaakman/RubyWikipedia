@@ -10,7 +10,5 @@ function validateForm() {
         alert("Invalid Username or Password.");
 
         return false;
-
     }
-
 } 
