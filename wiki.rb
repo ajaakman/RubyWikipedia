@@ -331,6 +331,7 @@ get '/login' do
 end
 
 
+
 get '/archive' do
 
    erb :archive
@@ -340,7 +341,7 @@ end
 
 get '/rankings' do
 
-   @list4 = User.all.sort_by { |u| [u.points] }
+   @list4 = User.all.sort_by { |u| [-u.points] }
 
    erb :rankings
 
@@ -363,6 +364,13 @@ protected!
     
     article = Article.where(:id => params[:id]).to_a.first  #find that article using id
     article.approved=true
+    article.approver=$credentials[0]
+    
+    @Users = User.where(:username => article.author).to_a.first
+    @Users.points += 1
+    @Users.save
+    
+    
     article.save
     
     event="Article approved with id: "+params[:id]

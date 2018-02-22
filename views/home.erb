@@ -18,18 +18,20 @@
 				</h2>
 				<p1>		
 				<%= article.content %><br><br>
-				
+				<% if $credentials != nil %>
+					<% if $credentials[0] != "" %>
 					<a href ='/editarticle/<%= article.id %>'>Edit this article</a><br>
-				
+					<% end %>
+				<% end %>
 				</p1>
 				<p2>
 				Author: <%= article.author %>	Approved On: <%= article.updated_at %><br>
 				Character Count: <%= article.content.size %>	Word Count: <%= article.content.split.size %><br>
 				<% total_char += article.content.size %>
 				<% total_word += article.content.split.size %>
-				<% end %>
 				</p2>
 				</div>
+				<% end %>
 				<br>
 			<% a.push article.heading %>
 			
