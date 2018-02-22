@@ -196,7 +196,7 @@ end
 
 post '/edit' do
 
-  protected!
+  registered!
    
     pp params #debuggin
      Article.create!(heading: params[:heading], content: params[:content], author: $credentials[0], approved: false, approver: "", lasteditor: "")

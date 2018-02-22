@@ -1,0 +1,70 @@
+
+
+
+Heading: Best Gaming Mice
+Content: Best Gaming Mice of 2017
+
+In this article we will discuss 5 best gaming mice of 2017. These mouse were selected based on user review on different websites. 
+
+ASUS ROG SPATA is presumably one of the greatest mice that anyone can purchase. It will request a considerable lot of land on the work area. This shouldn't imply that that a littler gave individual can't utilize it, yet there unquestionably are more agreeable mice – even from ASUS – that might be a superior fit. Notwithstanding for typical size hands, it might be somewhat clumsy. 
+
+Corsair M65 Pro RGB The principal thing that gets your attention with this Corsair item is its ergonomics and plan. The M65 utilizes one bit of plastic to shape three sections of the mouse – the palm rest and both the left and right snap. 
+Logitech G502 While we're not going to get excessively into style – they're really subjective – it ought to be said that it's not a terrible looking mouse. It's exceptionally adapted, much in the route the same number of gaming peripherals are. . Likewise, estimating 1.57 x 2.95 x 5.2 (HxWxD), the Spectrum is sensibly measured, if quite possibly a touch on the little size for those with greater hands. 
+
+Logitech G900 We feel that the outline here is first class. There's extremely no getting around that. In an industry that has turned out to be immersed with conspicuous and far excessively vivid outline, it's a much needed refresher to discover a mouse that doesn't shout at you excessively. 
+
+Razer DeathAdder Elite looks basically like most other DeathAdder models out there. It quantifies 5 x 2.76 x 1.73 inches, includes to a great degree characteristic shaping on the two sides, and bears the same finished holds (for your thumb, pinky and ring finger) that numerous other gaming mice do. 
+
+Source: https://www.google.com/url?q=http://www.armchairempire.com/Reviews/gaming-mouse-reviews&sa=D&source=hangouts&ust=1519413321177000&usg=AFQjCNF96KA8UpVRDAsmfe88gJOn4q3Lqw
+
+
+Author: techexpert
+Approved On: 22 02 2018 at 10:26PM
+
+
+Heading: Top gaming GPU
+Content: Nvidia GeForce GTX 1080 Ti Graphics Card Review. Nvidia’s GeForce GTX 1080 Ti is, for all intents and purposes, the company’s fastest desktop gaming graphics card - Titan Xp, the company's only faster (niche) card, costs ~60% more. The 1080 Ti employs a 12-billion-transistor GP102 processor sporting 3584 CUDA cores, 224 texture units, and 88 ROPs. A base clock rate of 1480 MHz typically accelerates to 1582 MHz under most gaming loads thanks to GPU Boost. And Nvidia’s partners tune those frequencies to differentiate their boards. An aggregate 352-bit memory bus hosts 11GB of GDDR5X memory able to move up to 484 GB/s of information.
+In comparison, the vanilla GeForce GTX 1080 utilizes a much less complex GP104 GPU armed with 2560 CUDA cores, 160 texture units, and 64 ROPs. Its 8GB of GDDR5 memory is still high-end by today’s standards. However, you’re looking at the difference between smooth performance at 3840x2160 from GeForce GTX 1080 Ti and a card better suited to 1440p at maxed-out details in the vanilla 1080. You’ll pay about $200 more for the GeForce GTX 1080 Ti, but in a world now unfriendly to multi-GPU configurations, we recommend buying the fastest single-GPU solution you can afford.
+How about the competition from AMD? Performance-wise, there is none. Radeon RX Vega 64 is more comparable to GeForce GTX 1080. At least for now, GeForce GTX 1080 Ti is in a class unto itself.
+So, if you’re looking for the best graphics performance available, let’s explore some of the available options and why you might consider one GTX 1080 Ti over another.
+Source: 
+http://www.tomshardware.co.uk/nvidia-geforce-gtx-1080-ti-graphics-card-roundup,review-34059.html
+
+Author: User
+Approved On: 22 02 2018 at 10:26PM
+
+
+Heading: Top 5 Upcoming Games
+Content: There are a lot of games releasing everyday These are the 5 most anticipated games for 2018.                              
+A Way Out
+Release Date: March 23, Platforms: PC, Xbox One, PS4
+I'm not sure if A Way Out is going to be good or not, but it's certainly an interesting concept. Heavily choice based, it's the story of two convicts who escape prison and go out on the road for a big adventure.
+Ni No Kuni 2: Revenant Kingdom
+Release Date: March 23, Platforms: PC, PS4
+I loved everything about the first Ni No Kuni except for how tedious it became after a while. Combat, in particular, was a far too frequent chore. But the story, the characters, the animation, the fact that you're basically playing a Studio Ghibli movie as a game---all of that was wonderful.
+Far Cry 5
+Release Date: March 27, Platforms: PC, Xbox One, PS4
+More than likely, from all we've seen so far, Far Cry 5 is going to be a lot like 3 and 4. That's a good thing and a bad thing. It's a good thing because those games have a winning formula that's a ton of fun to play: Crazy villain, big open world, lots of enemy bases to take down, and so forth.
+Agony
+Release Date: March 30, Platforms: PC, Xbox One, PS4
+Agony looks terrifying. From what little I've seen of it, this is not going to be a horror game for the meek or faint of heart.
+We Happy Few
+Release Date: Apr 13, Platforms: PC, Xbox One, PS4
+One of the more intriguing, zany looking games of 2018, We Happy Few is a survival-based game set in a dystopian fictional 1960s English town called Wellington Wells where everybody is constantly high on a hallucinogenic drug called Joy. 
+
+Source: https://www.forbes.com/sites/erikkain/2018/01/08/the-top-upcoming-video-games-of-2018-and-beyond/#702e4501f999
+
+Author: Moderator
+Approved On: 22 02 2018 at 10:22PM
+
+
+Heading: Best Budget GPUs
+Content: Nvidia GeForce GTX 1060 Graphics Card Review.
+Nvidia launched its GeForce GTX 1060 6GB in July of 2016 to inevitable comparisons with AMD's Radeon RX 480 8GB. Although the 1060 was faster in DX11 games, it also commanded a premium that was harder to justify than the uncontested GeForce GTX 1070 and 1080.
+A month later, Nvidia quietly rolled out a 3GB version of the 1060 to battle the 4GB RX 480. Its GPU took quite a haircut in the process, though, dropping from 1280 to 1152 CUDA cores and affecting performance far more than model name suggests. Presumably, Nvidia couldn't risk the 3GB and 6GB models appearing too similar at 1920x1080.
+After wrapping up our initial GeForce GTX 1080 and GeForce GTX 1070 round-ups, Tom's Hardware DE set to work on a collection of 1060s, 3GB and 6GB alike. This first incarnation includes eight different boards from a field that spans anywhere from under $200 to over $300. Each individual review goes incredibly deep, covering manufacturing quality, technical features, power consumption, clock rates, cooling, and acoustics.
+The gaming performance of every factory-overclocked board within a given chip class is usually pretty similar to begin with. But that's more true now than ever. This is a result of features like GPU Boost 3.0, which allows manufacturers to safely extract as much headroom as possible from a processor. Very little is left on the table, even if you have access to extreme overclocking hardware.
+Source: http://www.tomshardware.co.uk/nvidia-geforce-gtx-1060-graphics-card-roundup,review-33833.html
+
+Author: techexpert
+Approved On: 22 02 2018 at 10:21PM

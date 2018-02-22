@@ -1,0 +1,56 @@
+
+22 02 2018 at 10:07PM		Logging attempt failed: Moderator
+
+22 02 2018 at 10:07PM		New user signed up with user id Moderator
+
+22 02 2018 at 10:07PM		New user signed up with user id User
+
+22 02 2018 at 10:08PM		New user signed up with user id techexpert
+
+22 02 2018 at 10:08PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 10:08PM	Admin	User promoted as moderator with user id: Moderator
+
+22 02 2018 at 10:10PM	Admin	New article created with heading Best Gaming Mice
+
+22 02 2018 at 10:10PM	Admin	Article approved with id: 1
+
+22 02 2018 at 10:11PM	techexpert	User Logged in with user id: techexpert
+
+22 02 2018 at 10:14PM	techexpert	New article created with heading Best Budget GPUs
+
+22 02 2018 at 10:14PM	techexpert	New article created with heading Nvidia’s new budget GPU- How good is it???
+
+22 02 2018 at 10:17PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 10:18PM	techexpert	User Logged in with user id: techexpert
+
+22 02 2018 at 10:18PM	techexpert	Article edited with heading Best Gaming Mice
+
+22 02 2018 at 10:20PM	Moderator	User Logged in with user id: Moderator
+
+22 02 2018 at 10:21PM	Moderator	Article approved with id: 2
+
+22 02 2018 at 10:21PM	Moderator	New article created with heading Top 5 Upcoming Games
+
+22 02 2018 at 10:22PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 10:22PM	Admin	Article approved with id: 5
+
+22 02 2018 at 10:22PM	User	User Logged in with user id: User
+
+22 02 2018 at 10:23PM	User	New article created with heading Top gaming GPU
+
+22 02 2018 at 10:24PM	Moderator	User Logged in with user id: Moderator
+
+22 02 2018 at 10:25PM	User	User Logged in with user id: User
+
+22 02 2018 at 10:25PM	User	New article created with heading Nvidia GeForce GTX 1060 Graphics Card Review
+
+22 02 2018 at 10:25PM	Moderator	User Logged in with user id: Moderator
+
+22 02 2018 at 10:26PM	Moderator	Article approved with id: 6
+
+22 02 2018 at 10:26PM	Moderator	Article approved with id: 4
+
+22 02 2018 at 10:27PM	Admin	User Logged in with user id: Admin
