@@ -28,12 +28,40 @@ footer {
 }
 
 p {
+    margin: auto;
     color: #262F40;
+    height: 90%;
+    width: 90%;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
 }
 
 p1 {
     color: #262F40;
+    font-size: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+p2 {
+    color: #262F40;
     font-size: 80%;
+}
+
+h1 {
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+h2 {
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 a {
@@ -41,14 +69,6 @@ a {
 }
 
 div.content {
-    margin: auto;
-    background-color: #9895A6;
-    height: 90%;
-    width: 90%;
-    float: center;
-}
-
-div.post {
     margin: auto;
     background-color: #DFDAF2;
     height: 90%;
@@ -60,13 +80,17 @@ div.post {
     padding-left: 1%;
 }
 
+
+
 div.main_container {
     margin: auto;
-    background-color: #D3CFE5;
+    background-color: #BBB8CC;
     width: 100%;
     height: 100%;
-    position: relative;
-    float: left;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
 }
 
 div.page_title {
