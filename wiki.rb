@@ -218,7 +218,7 @@ end
 
 post '/create' do
  
- protected!
+ registered!
  
  a = Array.new
  Article.all.each do |article|

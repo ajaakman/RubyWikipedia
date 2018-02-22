@@ -1,14 +1,16 @@
 
 body {
-    font-family: Times;
+    font-family: Garamond;
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
-    background-image: url("/testimage.png");
+    background-color: #262F40;
+/*    background-image: url("/testimage.png");
     background-repeat: no-repeat;
     background-position: right top;
-    background-attachment: fixed;
+    background-attachment: fixed;*/
 }
+
 
 header {    
     height: 100px;
@@ -16,37 +18,71 @@ header {
     width: 100%;
     position: relative;
     float: left;
-    color: yellow;
+    color: #262F40;
 }
+
 
 footer {
     padding-top: 500px;
     position: relative;
 }
 
+p {
+    color: #262F40;
+}
+
+p1 {
+    color: #262F40;
+    font-size: 80%;
+}
+
 a {
     text-decoration: none;
 }
 
+div.content {
+    margin: auto;
+    background-color: #9895A6;
+    height: 90%;
+    width: 90%;
+    float: center;
+}
+
+div.post {
+    margin: auto;
+    background-color: #DFDAF2;
+    height: 90%;
+    width: 90%;
+    float: center;
+    padding-top: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+}
+
 div.main_container {
-    background-color: grey;
+    margin: auto;
+    background-color: #D3CFE5;
     width: 100%;
+    height: 100%;
     position: relative;
     float: left;
 }
 
 div.page_title {
     text-align: center;
+    font-size: 120%;
 } 
 
 div.navbar {
     width: 100%;
     position: relative;
     float: left;
+    font-size: 100%;
 }
 
 div.view_content {
-    min-height: 800px;
+    min-height: 100%;
 }
 
 div.links { 
@@ -83,7 +119,7 @@ div.table_cell {
     width: 12.5%;
 }
 
-div.my_image {
+/*div.my_image {
     width: 40%;
     padding-left: 30%;
     padding-right: 30%;
@@ -94,4 +130,4 @@ img.my_image {
     height: auto;
     max-height: 100%;
     min-height: 100%;
-} 
+} */
