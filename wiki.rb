@@ -243,6 +243,7 @@ end
 #
 #end
 
+
 post '/archivetext' do
    a= Array.new
 	  archiveText=""
@@ -264,7 +265,13 @@ post '/archivetext' do
      a.push article.heading 
 		
    end
+   
+  file = File.open("archive.txt", "w")  #write to file
+  file.puts archiveText
+  file.close
+  redirect "/admincontrols"
 end
+
 
 post '/create' do
  
