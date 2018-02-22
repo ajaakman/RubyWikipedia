@@ -1,0 +1,16 @@
+
+22 02 2018 at 04:16PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 04:21PM		New user signed up with user id test
+
+22 02 2018 at 04:23PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 04:25PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 04:27PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 04:27PM	Admin	User Logged in with user id: Admin
+
+22 02 2018 at 04:28PM	Admin	Article approved with id: 16
+
+22 02 2018 at 04:28PM	Admin	Article approved with id: 15

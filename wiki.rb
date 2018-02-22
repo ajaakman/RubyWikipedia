@@ -106,6 +106,33 @@ helpers do
 
 end
 
+def logDbChanges(event) #method called with the event as parameter
+
+
+	file = File.open("log.txt")  #read the log text file and get current content
+	currentText="";
+    file.each do |line|	
+	    currentText= currentText + line			
+	end
+	
+	
+	timeStamp=Time.now.strftime("%d %m %Y at %I:%M%p") #get current time stamp and format the time as string
+	
+	user="Unknow"
+	
+	if $credentials!=nil       #if the user is not logged in, keep the user as unknow otherwise get the user id
+   user=$credentials[0]
+ end
+ 
+	
+	newText=timeStamp+"\t"+user+"\t"+event    #concateate existing text and new text to be logged
+	logText=currentText+"\n"+newText
+	
+	file = File.open("log.txt", "w")  #write to file
+	file.puts logText
+ file.close
+	
+end
 
 #def readFile(filename)
 #
@@ -216,6 +243,29 @@ end
 #
 #end
 
+post '/archivetext' do
+   a= Array.new
+	  archiveText=""
+   
+   Article.order(updated_at: :desc).each do |article|
+     if article.approved == true && !a.include?(article.heading) 
+    
+        articleDetails= "Heading: "+ article.heading
+        articleDetails=articleDetails+"\nContent: "+article.content
+        if article.author==nil
+          author="N/A"
+        else
+          author=article.author
+        end
+        articleDetails=articleDetails+ "\nAuthor: "+author
+        articleDetails=articleDetails+ "\nApproved On: "+ article.updated_at.strftime("%d %m %Y at %I:%M%p")
+        archiveText=archiveText+"\n\n\n"+articleDetails
+     end 
+     a.push article.heading 
+		
+   end
+end
+
 post '/create' do
  
  registered!
@@ -227,6 +277,8 @@ end
     if !a.include?(params[:heading]) #Preventing the creation of articles with duplicate names.
         Article.create(heading: params[:heading], content: params[:content], approved: false)
     end
+    event="New article created with heading "+params[:heading]
+    logDbChanges(event)
 redirect "/"
 
 end
@@ -238,6 +290,9 @@ protected!
  
   pp params
    Article.create!(heading: params[:heading], content: params[:content], approved: false)
+
+   event="Article edited with heading "+params[:heading]
+   logDbChanges(event)
  
 redirect "/"
 
@@ -256,6 +311,9 @@ User.create(username: "User", password: "user", moderator: false, points: 10)
 Article.create(heading: "testheading", content: "testcontent testcontent testcontent testcontent testcontent testcontent testcontent", author: "Admin", approved: false, approver: "Admin")
 Article.create(heading: "test2", content: "testcontent2 text texttexttext texttext texttestcontent testcontent testcontent testcontent testcontent", author: "Admin", approved: false, approver: "Admin")
 redirect "/"
+ 
+event="Datebase Reset" 
+logDbChanges(event) 
  
 end
 
@@ -299,6 +357,9 @@ protected!
     article = Article.where(:id => params[:id]).to_a.first  #find that article using id
     article.approved=true
     article.save
+    
+    event="Article approved with id: "+params[:id]
+    logDbChanges(event)
     erb :approvedConf
 end
 
@@ -311,13 +372,15 @@ post '/login' do
    if @Users
 
       if @Users.password == $credentials[1]
-  
+          event="User Logged in with user id: "+ params[:username]
+          logDbChanges(event);  
           redirect '/'
   
       else
   
           $credentials = ['','']
-      
+          event="Logging attempt failed: "+ params[:username]
+          logDbChanges(event);
           redirect '/wrongaccount'
 
     end
@@ -325,7 +388,8 @@ post '/login' do
     else
 
         $credentials = ['','']
-      
+        event="Logging attempt failed: "+ params[:username]
+        logDbChanges(event);
         redirect '/wrongaccount'
 
    end
@@ -355,7 +419,8 @@ post '/createaccount' do
     end
 
    n.save    
-
+   event="New user signed up with user id "+params[:username]
+   logDbChanges(event)
    redirect "/"
 
 end
@@ -413,9 +478,12 @@ restricted!
 
    n.moderator = params[:moderator] ? 1 : 0
   
-   n.save 
+   n.save
+   
+   event="User promoted as moderator with user id: "+params[:uzer]
+   logDbChanges(event)
   
-   redirect '/'
+   redirect '/userlist'
 
 end
 
@@ -449,11 +517,14 @@ n = User.where(:username => params[:uzer]).to_a.first
      @list2 = User.all.sort_by { |u| [u.id] }
       
     
-      erb :admincontrols
+      redirect '/userlist'
 
   end
   
-   redirect '/'
+  event="User deleted "+params[:uzer]
+      logDbChanges(event)
+  
+   redirect '/userlist'
 
 end
 
@@ -469,9 +540,10 @@ restricted!
       
      @list3 = Article.all.sort_by { |a| [a.id] }
      
-      erb :admincontrols
+     event="Article deleted with id "+params[:artikle]
+     logDbChanges(event)
 
-   redirect '/'
+   redirect '/articlelist'
 
 end
 
