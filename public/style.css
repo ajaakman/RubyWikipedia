@@ -51,6 +51,7 @@ p2 {
 }
 
 h1 {
+
     height: 90%;
     width: 90%;
     margin: auto;
@@ -118,11 +119,9 @@ div.links {
 
 
 div.users, div.articles {
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
-    position: relative;
-    float: left;
+    margin: auto;
+    width: 90%;
+
 }
 
 div.user, div.article, div.table_header {
