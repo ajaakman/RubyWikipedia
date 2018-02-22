@@ -457,6 +457,7 @@ n = User.where(:username => params[:uzer]).to_a.first
 
 end
 
+
 get '/article/delete/:artikle' do  
  
 restricted!
@@ -485,6 +486,12 @@ end
 get '/denied' do
   
    erb :denied 
+
+end
+
+get '/user/:uzer' do 
+
+    erb :profile
 
 end
 
