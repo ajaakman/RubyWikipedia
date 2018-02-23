@@ -54,3 +54,27 @@
 22 02 2018 at 10:26PM	Moderator	Article approved with id: 4
 
 22 02 2018 at 10:27PM	Admin	User Logged in with user id: Admin
+
+23 02 2018 at 12:39AM	Admin	User Logged in with user id: Admin
+
+23 02 2018 at 12:40AM	Admin	Article edited with heading Best Gaming Mice
+
+23 02 2018 at 12:40AM	Admin	Article deleted with id 8
+
+23 02 2018 at 12:42AM	Admin	User Logged in with user id: Admin
+
+23 02 2018 at 12:42AM	Admin	New article created with heading test
+
+23 02 2018 at 12:43AM	Admin	Article deleted with id 9
+
+23 02 2018 at 12:46AM	Admin	User Logged in with user id: Admin
+
+23 02 2018 at 12:46AM	Admin	New article created with heading test
+
+23 02 2018 at 12:46AM	Admin	Article approved with id: 10
+
+23 02 2018 at 12:46AM	Admin	Article edited with heading test
+
+23 02 2018 at 12:46AM	Admin	Article deleted with id 10
+
+23 02 2018 at 12:47AM	Admin	Article deleted with id 11

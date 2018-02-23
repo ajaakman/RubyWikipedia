@@ -199,7 +199,7 @@ post '/edit' do
   registered!
    
     pp params #debuggin
-     Article.create!(heading: params[:heading], content: params[:content], author: $credentials[0], approved: false, approver: "", lasteditor: "")
+     Article.create!(heading: params[:heading], content: params[:content], author: $credentials[0], approved: false, approver: " ", lasteditor: "")
   
      event="Article edited with heading "+params[:heading]
      logDbChanges(event)
