@@ -1,19 +1,15 @@
 
-<h2>Edit article</h2><br>
+<h1>Edit article</h1><br>
 	
 	<form action="/edit" method="post">
 	
-		<p>Heading</p>
-		
-		<p><h3 rows="1" col="90"><%= myheading%></h3></p>
+		<p><h1 rows="1" col="90"><%= myheading%></h1></p>
 		
 		<input type="hidden" name="heading" value="<%= myheading%>">
 		
-		<p>Content</p>
-		
 		<p><textarea rows="20" col="90" name="content"><%= mycontent%></textarea></p>
 		
-		<input type="submit" value="Submit">
+		<p><input type="submit" value="Submit"></p>
 		
 	</form>
 	

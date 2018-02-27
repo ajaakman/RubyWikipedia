@@ -78,3 +78,21 @@
 23 02 2018 at 12:46AM	Admin	Article deleted with id 10
 
 23 02 2018 at 12:47AM	Admin	Article deleted with id 11
+
+24 02 2018 at 04:02PM	User	User Logged in with user id: User
+
+24 02 2018 at 04:03PM	User	New article created with heading asdsad
+
+24 02 2018 at 04:03PM	Moderator	User Logged in with user id: Moderator
+
+24 02 2018 at 04:03PM	Moderator	Article approved with id: 12
+
+24 02 2018 at 04:04PM	Moderator	Article edited with heading asdsad
+
+24 02 2018 at 04:04PM	Moderator	Article approved with id: 13
+
+24 02 2018 at 04:05PM	Admin	User Logged in with user id: Admin
+
+27 02 2018 at 12:20PM	Admin	User Logged in with user id: Admin
+
+27 02 2018 at 12:38PM	Admin	User Logged in with user id: Admin
