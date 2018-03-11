@@ -422,3 +422,12 @@ not_found do # Redirect if directory does not exist.
 	status 404	
 	redirect '/notfound'
 end
+
+def  reverse (string)
+  string.each_char.to_a.reverse.join 
+end
+
+get '/reverse' do
+  $myinfo = reverse($myinfo)
+  redirect '/'
+end
